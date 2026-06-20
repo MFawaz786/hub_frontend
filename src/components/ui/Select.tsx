@@ -1,6 +1,8 @@
 type SelectProps = {
   options: string[];
   value?: string;
+  placeholder?: string;
+  disabled?: boolean;
   onChange?: (
     e: React.ChangeEvent<HTMLSelectElement>
   ) => void;
@@ -9,14 +11,26 @@ type SelectProps = {
 export default function Select({
   options,
   value,
+  placeholder = "Select an option",
+  disabled = false,
   onChange,
 }: SelectProps) {
   return (
     <select
       value={value}
+      disabled={disabled}
       onChange={onChange}
-      className="input-cixio"
+      className="
+        input-cixio
+        cursor-pointer
+        disabled:cursor-not-allowed
+        disabled:opacity-50
+      "
     >
+      <option value="" disabled>
+        {placeholder}
+      </option>
+
       {options.map((option) => (
         <option
           key={option}
