@@ -5,6 +5,7 @@ type ButtonProps = {
   type?: "button" | "submit" | "reset";
   variant?: "primary" | "secondary" | "danger";
   size?: "sm" | "md" | "lg";
+  className?: string;
 };
 
 export default function Button({
@@ -14,6 +15,7 @@ export default function Button({
   type = "button",
   variant = "primary",
   size = "md",
+  className = "",
 }: ButtonProps) {
   const variants = {
     primary:
@@ -48,6 +50,7 @@ export default function Button({
         disabled:cursor-not-allowed
         ${variants[variant]}
         ${sizes[size]}
+        ${className}
       `}
     >
       {children}

@@ -8,6 +8,7 @@ type InputProps = {
   disabled?: boolean;
   label?: string;
   error?: string;
+  className?: string;
 };
 
 export default function Input({
@@ -18,6 +19,7 @@ export default function Input({
   disabled = false,
   label,
   error,
+  className = "",
 }: InputProps) {
   return (
     <div className="w-full">
@@ -37,6 +39,7 @@ export default function Input({
           input-cixio
           ${error ? "border-red-500 focus:ring-red-500 focus:border-red-500" : ""}
           ${disabled ? "opacity-60 cursor-not-allowed bg-gray-100" : ""}
+          ${className}
         `}
       />
 
