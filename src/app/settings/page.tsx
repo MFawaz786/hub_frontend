@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState  } from "react";
+import { useEffect, useState , useRef, useMemo } from "react";
 import { Bell, Monitor, Shield, UserCog } from "lucide-react";
 
 const initialToggles = {
